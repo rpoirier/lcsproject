@@ -1,3 +1,10 @@
+/*Longest Common Subsequence Program
+*By Russell Poirier (2013)
+*With help from Natasha Kourtnina
+*This program takes two sequences of characters from the user and finds the longest common
+*subsequence between them.
+*/
+
 #include<iostream>
 #include<vector>
 using namespace std;
@@ -132,15 +139,15 @@ void printlcs(matrix B, vector<char> X, int i, int j) {
 		return;
 	//if we see a diagonal arrow, call printlcs passing the coords of the diag cell and print X[j]
 	if(B[i][j]=='D') {
-		printlcs(B, X, ????, ????);
+		printlcs(B, X, i-1, j-1);
 		cout<<X[j];
 	}
 	//if we see an up arrow, call printlcs passing the coordinates of the appropriate cell
 	if(B[i][j]=='U') {
-		printlcs(B, X, ????, ????);
+		printlcs(B, X, i-1, j);
 	}
 	//if we see a left arrow, call printlcs passing the coordinates of the appropriate cell
 	if(B[i][j]=='L') {
-	printlcs(B, X, ????, ????);
+	printlcs(B, X, i, j-1);
 	}
 }
