@@ -37,6 +37,7 @@ int main() {
 
 	printv(X);
 	printv(Y);
+	cout<<endl;
 
 	//construct matricies
 	
@@ -80,11 +81,35 @@ int main() {
 					C[i][j]=C[i-1][j];
 					B[i][j]='U';
 				} else {
-				//	C[i][j]=????;
-				//	B[i][j]=????;
+					//not sure about this logic
+					C[i][j]=C[i][j-1];
+					B[i][j]='L';
 				}
 			}
 		}
+
+	//print both matrices
+	for(int i=0; i<number_of_rows; i++)
+		for(int j=0; j<number_of_columns; j++) {
+			if(j!=number_of_columns-1) {
+				cout<<C[i][j]<<" ";
+			} else {
+				cout<<C[i][j]<<endl;
+			}
+		}
+	cout<<endl;
+
+	for(int i=0; i<number_of_rows; i++)
+		for(int j=0; j<number_of_columns; j++) {
+			if(j!=number_of_columns-1) {
+				cout<<B[i][j]<<" ";
+			} else {
+				cout<<B[i][j]<<endl;
+			}
+		}
+	cout<<endl;
+
+
 
 
 return 0;
