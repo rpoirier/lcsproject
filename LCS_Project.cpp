@@ -6,6 +6,7 @@ typedef vector<char> row;
 typedef vector<row> matrix;
 
 void printv(vector<char>x);
+void printlcs(matrix B, vector<char> X, int i, int j);
 
 int main() {
 
@@ -109,7 +110,9 @@ int main() {
 		}
 	cout<<endl;
 
-
+	cout<<"Here is your longest common subsequence"<<endl;
+	printlcs(B, X, number_of_rows-1, number_of_columns-1);
+	cout<<endl;
 
 
 return 0;
@@ -121,4 +124,23 @@ void printv(vector<char>x) {
 		cout<<x[i]<<" ";
 
 	cout<<endl;
+}
+
+void printlcs(matrix B, vector<char> X, int i, int j) {
+	//if we are at the first row of a column, stop
+	if(i==0||j==0)
+		return;
+	//if we see a diagonal arrow, call printlcs passing the coords of the diag cell and print X[j]
+	if(B[i][j]=='D') {
+		printlcs(B, X, ????, ????);
+		cout<<X[j];
+	}
+	//if we see an up arrow, call printlcs passing the coordinates of the appropriate cell
+	if(B[i][j]=='U') {
+		printlcs(B, X, ????, ????);
+	}
+	//if we see a left arrow, call printlcs passing the coordinates of the appropriate cell
+	if(B[i][j]=='L') {
+	printlcs(B, X, ????, ????);
+	}
 }
